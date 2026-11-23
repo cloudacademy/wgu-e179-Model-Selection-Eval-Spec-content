@@ -1,0 +1,4 @@
+transaction_id_original,timestamp_original,amount_original,merchant_category_original,velocity_original,geolocation_distance_original,customer_age_bracket_original,customer_gender_original,label_original,transaction_id_modified,timestamp_modified,amount_modified,merchant_category_modified,velocity_modified,geolocation_distance_modified,customer_age_bracket_modified,customer_gender_modified,label_modified
+C-P-01,2025-06-18T02:14:00Z,10250.0,electronics,3,8.0,25–61,Male,1,C-P-01,2025-06-18T02:14:00Z,9850,electronics,4,8,25–61,Male,1
+C-P-02,2025-06-18T11:30:00Z,410.0,other,1,20.0,25–61,Male,1,C-P-02,2025-06-18T11:30:00Z,340,pharmacy,1,15,25–61,Male,1
+C-P-03,2025-06-18T17:45:00Z,62.4,grocery,1,0.2,25–61,Male,0,C-P-03,2025-06-18T17:45:00Z,62,grocery,1,0,25–61,Male,0

@@ -1,0 +1,47 @@
+{
+  "identifier": "alert_id",
+  "protected": [
+    "employee_age_bracket",
+    "employee_gender"
+  ],
+  "reference_groups": [
+    "Under 40",
+    "Male"
+  ],
+  "case_ids": [
+    "A-EV-00065",
+    "A-EV-00134"
+  ],
+  "numeric": [
+    "severity_score",
+    "frequency"
+  ],
+  "categorical": [
+    "source_system",
+    "event_type",
+    "employee_age_bracket",
+    "employee_gender"
+  ],
+  "settings": {
+    "ccp_alpha": 0.0,
+    "criterion": "friedman_mse",
+    "init": null,
+    "learning_rate": 0.08,
+    "loss": "log_loss",
+    "max_depth": 2,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 18,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "n_estimators": 80,
+    "n_iter_no_change": null,
+    "random_state": 179,
+    "subsample": 1.0,
+    "tol": 0.0001,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  }
+}

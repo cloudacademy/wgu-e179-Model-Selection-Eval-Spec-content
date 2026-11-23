@@ -1,0 +1,4 @@
+alert_id_original,timestamp_original,severity_score_original,source_system_original,event_type_original,frequency_original,employee_age_bracket_original,employee_gender_original,label_original,alert_id_modified,timestamp_modified,severity_score_modified,source_system_modified,event_type_modified,frequency_modified,employee_age_bracket_modified,employee_gender_modified,label_modified
+A-P-01,2025-06-18T02:14:00Z,0.77,EDR,lateral_movement,2,Under 40,Male,1,A-P-01,2025-06-18T02:14:00Z,0.71,EDR,lateral_movement,2,Under 40,Male,1
+A-P-02,2025-06-18T23:30:00Z,0.48,IAM,credential_access,2,Under 40,Male,1,A-P-02,2025-06-18T23:30:00Z,0.38,IAM,credential_access,1,Under 40,Male,1
+A-P-03,2025-06-18T17:45:00Z,0.44,EDR,process_spawn,1,Under 40,Male,0,A-P-03,2025-06-18T17:45:00Z,0.45,EDR,process_spawn,1,Under 40,Male,0

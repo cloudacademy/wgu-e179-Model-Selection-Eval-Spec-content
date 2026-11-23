@@ -1,0 +1,15 @@
+:root, body[data-jp-theme-light="true"], body[data-jp-theme-light="false"] {
+  --jp-ui-font-size0: 14px; --jp-ui-font-size1: 15px; --jp-ui-font-size2: 17px;
+  --jp-content-font-size0: 14px; --jp-content-font-size1: 16px; --jp-code-font-size: 15px;
+}
+.jp-RenderedHTMLCommon, .jp-RenderedMarkdown { color: #172536; background: #ffffff; line-height: 1.5; }
+.jp-RenderedHTMLCommon a, .jp-RenderedMarkdown a { color: #174d81; text-decoration: underline; }
+.jp-RenderedHTMLCommon table th { font-weight: 700; }
+:focus-visible { outline: 3px solid #1766a4; outline-offset: 2px; }
+:root, body[data-jp-theme-light="true"], body[data-jp-theme-light="false"] {
+  --jp-ui-font-color0: #172536; --jp-ui-font-color1: #172536; --jp-ui-font-color2: #334558;
+  --jp-content-font-color0: #172536; --jp-content-font-color1: #172536; --jp-content-font-color2: #334558;
+  --jp-layout-color0: #ffffff; --jp-layout-color1: #ffffff; --jp-layout-color2: #f3f5f7; --jp-layout-color3: #e6eaf0;
+}
+.jp-Toolbar button, .jp-StatusBar-Item, .lm-Menu-itemLabel, .jp-DirListing-itemText,
+.jp-InputPrompt, .jp-OutputPrompt, .jp-RenderedHTMLCommon small, .cm-gutters { font-size: max(13px, 1em); }
