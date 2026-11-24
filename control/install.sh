@@ -26,11 +26,9 @@ install -m 0755 "$control/"{kernel,health,autostop}.sh /opt/e179/
 install -m 0644 "$control/"{agent,autostop,probe_kernel}.py /opt/e179/
 install -m 0644 "$control/e179_guard.py" /opt/e179/site/
 install -m 0644 "$control/jupyter_server_config.py" /opt/e179/config/
-# Disable the Git sidebar in the student browser before the managed Jupyter service starts.
-install -d -m 0755 /opt/e179/config/labconfig
-cat >/opt/e179/config/labconfig/page_config.json <<'JSON'
-{"disabledExtensions":{"@jupyterlab/git":true}}
-JSON
+# Disable Git in the managed JupyterLab environment serving the student UI.
+lab_prefix=/home/ec2-user/anaconda3/envs/JupyterSystemEnv
+"$lab_prefix/bin/jupyter-labextension" disable --level=sys-prefix @jupyterlab/git
 install -m 0644 "$control/custom.css" /opt/e179/config/custom/
 # LabApp serves custom CSS from its effective config directory on managed images.
 install -d -m 0755 /home/ec2-user/.jupyter/custom
