@@ -28,7 +28,24 @@ install -m 0644 "$control/e179_guard.py" /opt/e179/site/
 install -m 0644 "$control/jupyter_server_config.py" /opt/e179/config/
 # Disable Git in the managed JupyterLab environment serving the student UI.
 lab_prefix=/home/ec2-user/anaconda3/envs/JupyterSystemEnv
-"$lab_prefix/bin/jupyter-labextension" disable --level=sys-prefix @jupyterlab/git
+/usr/bin/python3.12 -I - "$lab_prefix/etc/jupyter/labconfig/page_config.json" <<'PAGE_CONFIG'
+import json
+import os
+from pathlib import Path
+import sys
+import tempfile
+
+path = Path(sys.argv[1])
+path.parent.mkdir(parents=True, exist_ok=True)
+config = json.loads(path.read_text()) if path.exists() else {}
+disabled = config.setdefault("disabledExtensions", {})
+disabled["@jupyterlab/git"] = True
+with tempfile.NamedTemporaryFile(mode="w", dir=path.parent, delete=False) as out:
+    json.dump(config, out, indent=2)
+    out.write("\n")
+os.chmod(out.name, 0o644)
+os.replace(out.name, path)
+PAGE_CONFIG
 install -m 0644 "$control/custom.css" /opt/e179/config/custom/
 # LabApp serves custom CSS from its effective config directory on managed images.
 install -d -m 0755 /home/ec2-user/.jupyter/custom
