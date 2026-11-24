@@ -4,7 +4,7 @@ The identifiers below are placeholders. Each expression shows the interface to o
 ~~~python
 from sklearn.base import clone
 from sklearn.model_selection import StratifiedKFold, KFold, cross_val_score
-splitter = StratifiedKFold(n_splits=k, shuffle=True, random_state=seed)
+splitter = splitter_class(n_splits=k, shuffle=True, random_state=seed)  # choose the splitter class
 scores = cross_val_score(clone(estimator), features, labels, cv=splitter, scoring=scorer)
 from sklearn.metrics import precision_score, recall_score, f1_score, roc_auc_score
 precision_score(y_true, predicted_labels)
@@ -14,7 +14,7 @@ roc_auc_score(y_true, positive_scores)
 estimator.predict(frame)
 estimator.predict_proba(frame)[:, 1]
 table.groupby(group_field)[flag_field].mean()
-rates.div(rates.loc[reference_value])
+series.div(other)
 ~~~
 
 ~~~python
@@ -35,5 +35,5 @@ report = Report(metrics=[DataDriftPreset()])
 report.run(reference_data=reference_frame, current_data=current_frame)
 result = report.as_dict()
 # DataDriftTable result interface
-columns = result["metrics"][1]["result"]["drift_by_columns"]
+table_result["drift_by_columns"]  # field of the DataDriftTable metric result
 ~~~
